@@ -136,7 +136,7 @@ nav a {
 .section_4 div.right{
   display: block;
   border-radius: 4px;
-  background-color: #ffe100a6;
+  /*background-color: #ffe100a6;*/
   padding: 10px;
   max-width: 300px;
 }
@@ -144,6 +144,7 @@ nav a {
 .grid {
   display: flex;
   justify-content: flex-start;
+  background-color: #fff !important;
   width: 250px;
   flex-flow: wrap;
 }
