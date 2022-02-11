@@ -39,6 +39,7 @@
 
   .links {
     border: 1px solid #fff;  
+    display: flex;
     justify-content: flex-end;
   }
 
@@ -54,17 +55,31 @@
   }
   
   .header {
-    width: 500px;
+    width: 900px;
     height: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
+  .social,
+.subscribe {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.photo-grid { /* displays the colored boxes as 3, 2, 5, 4, 1*/
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
 
 .photo-grid-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .photo-grid-item {
@@ -121,3 +136,4 @@
       height: 400px;
     }
   }
+
