@@ -60,3 +60,10 @@
     justify-content: space-between;
     align-items: center;
   }
+
+
+.photo-grid-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
