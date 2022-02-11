@@ -53,3 +53,10 @@
     justify-content: center;
   }
   
+  .header {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
