@@ -1,1 +1,14 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .name {         /* Anne Bezwada Lab 3: Flexbox Demo */
+    text-align: left;
+    padding: 10px;
+    background: #4da2a2;
+    font-weight: bold;
+  }
+  
+  
