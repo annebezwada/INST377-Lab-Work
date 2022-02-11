@@ -11,4 +11,11 @@
     font-weight: bold;
   }
   
-  
+  .menu-container {    /* blue for the date, database demos link, and main page link */
+    color: #fff;
+    background-color: #5995da;  
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
