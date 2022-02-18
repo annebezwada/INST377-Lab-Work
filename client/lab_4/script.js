@@ -16,7 +16,6 @@ document.querySelector('#next-button').onclick = (e) => {
 };
 
 document.querySelector('#previous-button').onclick = (e) => {
-  // Check next item
   if (current.previousElementSibling) {
     current.classList.remove('visible');
     current.previousElementSibling.classList.add('visible');

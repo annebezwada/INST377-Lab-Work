@@ -38,7 +38,7 @@
   }
   
   .links {
-    border: 1px solid #fff;  /* For debugging */
+    border: 1px solid #fff;  
     display: flex;
     justify-content: flex-end;
   }
