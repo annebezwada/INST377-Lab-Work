@@ -1,2 +1,16 @@
 const first = document.querySelector('.carousel-item.visible');
 const last = document.querySelector('.carousel-item: last-of-type');
+
+let current = first;
+
+document.querySelector('#next-button').onclick = (e) => {
+  if (current.nextElementSibling) {
+    current.classList.remove('visible');
+    current.nextElementSibling.classList.add('visible');
+    current = current.nextElementSibling;
+  } else {
+    current.classList.remove('visible');
+    first.classList.add('visible');
+    current = first;
+  }
+};
