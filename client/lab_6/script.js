@@ -102,9 +102,6 @@ async function setup() {
     const regex = new RegExp(term, 'gi');
     const fragment = document.createDocumentFragment();
 
-    // Build Result Rows
-    // Limit to 26 results (Lag)
-    // We really should use pagination here
     (results || []).splice(0, 25).forEach((resturant) => {
       // Variables
       const tr = document.createElement('tr');
