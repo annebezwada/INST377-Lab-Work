@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+   <div class="wrapper">
+       <div class="container">
+           <div class = "box is-size-4 has-background-warning">Race Saunders Lab 7</div>
+           <div class = "columns is-mobile is-centered is-vcentered">
+               <div class = "column is-narrow">
+                   <div class = "box">
+                       <form class="main_form" >
+                           <div class="field">
+                               <label for="resto_name" class="label">Restaurant Name</label>
+                               <div class="control">
+                                   <input type="text" name="resto_name" id="resto_name">
+                               </div>
+
+                               <label for="zipcode" class="label">Zipcode</label>
+                               <div class="control">
+                                   <input type="text" name="zipcode" id="zipcode">
+                               </div>
+                           </div>
+
+
+<!--                            <div class="field">
+                               <label for="food_pref" class="label">Food Preference</label>
+                               <div class="control">
+                                   <input type="text" name="food_pref" id="food_pref">
+                               </div>
+                           </div>
+                           <div class="field">
+                            <label for="veg" class="label">Veggie or Vegan</label>
+                            <div class="control">
+                                <label for="veg" class = "radio">Yes</label>
+                                <input type="radio" name="veg" id="veg">
+                                <label for="veg" class = "radio">No</label>
+                                <input type="radio" name="veg" id="veg">
+                            </div>
+                           </div> -->
+                           <button class="button submit_button is-success" type ="submit">
+                               Change Restaurants
+                           </button>
+
+                       </form>
+                   </div>
+               </div>
+                <div class="column is-half is-vcentered">
+                    <div class="page_item page_item_wide box">
+                        <div id="map"></div>
+                        <h2>Restaurant List</h2>
+                        <ul class="resto-list"></ul>
+                    </div>
+                </div>
+           </div>
+       </div>
+   </div>
+    <script src="./script.js"></script>
+</body>
+</html>
