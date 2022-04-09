@@ -47,16 +47,17 @@ function initMap() {
   ).addTo(map);
   return map;
 }
-async function mainEvent() { // the async keyword means we can make API requests
-    const form = document.querySelector('.main_form'); // change this selector to match the id or classname of your actual form
-    const submit = document.querySelector('.submit_button');
-  
-    const resto = document.querySelector('#resto_name');
-    const zipcode = document.querySelector('#zipcode');
-    const map = initMap();
-    submit.style.display = 'none';
+async function mainEvent() {
+  // the async keyword means we can make API requests
+  const form = document.querySelector('.main_form'); // change this selector to match the id or classname of your actual form
+  const submit = document.querySelector('.submit_button');
 
-    const arrayFromJson = {data: []}; 
+  const resto = document.querySelector('#resto_name');
+  const zipcode = document.querySelector('#zipcode');
+  const map = initMap();
+  submit.style.display = 'none';
+
+  const arrayFromJson = { data: [] };
   if (arrayFromJson.data.length > 0) {
     submit.style.display = 'block';
 
@@ -76,16 +77,30 @@ async function mainEvent() { // the async keyword means we can make API requests
       createHtmlList(selectResto);
     });
 
-    zipcode.addEventListener('input', async(event) => {
-        console.log(event.target.value);
-        if (currentArray.length < 1) {
-          return;
-        }
-        const selectResto = currentArray.filter((item) => {
-          const lowerzip = item.zip.toLowerCase();
-          const lowerValue = event.target.value.toLowerCase();
-          return lowerzip.includes(lowerValue);
-        });
-        console.log(selectResto);
-        createHtmlList(selectResto);
+    zipcode.addEventListener('input', async (event) => {
+      console.log(event.target.value);
+      if (currentArray.length < 1) {
+        return;
+      }
+      const selectResto = currentArray.filter((item) => {
+        const lowerzip = item.zip.toLowerCase();
+        const lowerValue = event.target.value.toLowerCase();
+        return lowerzip.includes(lowerValue);
       });
+      console.log(selectResto);
+      createHtmlList(selectResto);
+    });
+
+    form.addEventListener('submit', async (submitEvent) => {
+      // async has to be declared all the way to get an await
+      submitEvent.preventDefault(); // This prevents your page from refreshing!
+      // console.log('form submission'); // this is substituting for a "breakpoint"
+      currentArray = restoArrayMake(arrayFromJson.data);
+      console.log(currentArray);
+      createHtmlList(currentArray);
+    });
+  }
+}
+
+// this actually runs first! It's calling the function above
+document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
