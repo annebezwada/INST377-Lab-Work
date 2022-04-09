@@ -47,3 +47,12 @@ function initMap() {
   ).addTo(map);
   return map;
 }
+async function mainEvent() { // the async keyword means we can make API requests
+    const form = document.querySelector('.main_form'); // change this selector to match the id or classname of your actual form
+    const submit = document.querySelector('.submit_button');
+  
+    const resto = document.querySelector('#resto_name');
+    const zipcode = document.querySelector('#zipcode');
+    const map = initMap();
+    submit.style.display = 'none';
+    
