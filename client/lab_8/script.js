@@ -55,4 +55,23 @@ async function mainEvent() { // the async keyword means we can make API requests
     const zipcode = document.querySelector('#zipcode');
     const map = initMap();
     submit.style.display = 'none';
-    
+
+    const arrayFromJson = {data: []}; 
+  if (arrayFromJson.data.length > 0) {
+    submit.style.display = 'block';
+
+    let currentArray = [];
+    resto.addEventListener('input', async (event) => {
+      console.log(event.target.value);
+
+      if (currentArray.length < 1) {
+        return;
+      }
+      const selectResto = currentArray.filter((item) => {
+        const lowerName = item.name.toLowerCase();
+        const lowerValue = event.target.value.toLowerCase();
+        return lowerName.includes(lowerValue);
+      });
+      console.log(selectResto);
+      createHtmlList(selectResto);
+    });
