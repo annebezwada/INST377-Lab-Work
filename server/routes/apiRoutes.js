@@ -16,6 +16,9 @@ router.get('/', (req, res) => {
   // res.send('Welcome to the UMD Dining API!');
 });
 
+/* Following Professor's code in lecture (4.7) */
+router.use('/foodServicesPG', foodServiceRoutes);
+
 // /////////////////////////////////
 // Food Inspection Set Demos
 // /////////////////////////////////
