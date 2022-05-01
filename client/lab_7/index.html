@@ -1,59 +1,61 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Lab 7 - Filtering Data With A Typeahead Form Input</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body class="p-3">
-    <div class="notification is-warning">
-      Anne Bezwada's Lab 7
-    </div>
-    <div class="columns is-centered is-vcentered">
-      <div class="column is-one-quarter">
-          <div class="field">
-            <label class="label">Restaurant Name</label>
-            <div class="control">
-              <input name="rest_name" class="input" type="text">
-            </div>
-          </div>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="styles.css" />
 
-          <div class="field">
-            <label class="label">Food Type</label>
-            <div class="control">
-              <input name="food_type" class="input" type="text">
-            </div>
-          </div>
+</head>
+<body>
+   <div class="wrapper">
+       <div class="container">
+           <div class = "box is-size-4 has-background-warning">Anne Bezwada Lab 7</div>
+           <div class = "columns is-mobile is-centered is-vcentered">
+               <div class = "column is-narrow">
+                   <div class = "box">
+                       <form class="main_form" >
+                           <div class="field">
+                               <label for="resto_name" class="label">Restaurant Name</label>
+                               <div class="control">
+                                   <input type="text" name="resto_name" id="resto_name">
+                               </div>
 
-          <div class="field">
-            <label class="label">Veggie or Vegan?</label>
-            <div class="control">
-              <label class="radio">
-                <input type="radio" name="veggie">
-                Yes
-              </label>
-              <label class="radio">
-                <input type="radio" name="vegan">
-                No
-              </label>
-            </div>
-          </div>
+                               <label for="zipcode" class="label">Zipcode</label>
+                               <div class="control">
+                                   <input type="text" name="zipcode" id="zipcode">
+                               </div>
+                           </div>
 
-          <button class="button submit_button is-success" type ="submit">
-            Load List
-        </button>
-      </form>
-      </div>
-      <div class="column is-one-third">
-        <div class="card">
-          <div class="card-content">
-            <div class="content">
-            Restaurant List
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                           <button class="button submit_button is-success" type ="submit">
+                               Change Restaurants
+                           </button>
+
+                            <!-- Needed to add the refresh list button -->
+                           <button class="button" id ="refresh_list">
+                            Refresh List
+                            </button>
+
+                       </form>
+                   </div>
+               </div>
+                <div class="column is-half is-vcentered">
+                    <div class="page_item page_item_wide box">
+                        <div id="map"></div>
+                        <h2>Load List</h2>
+                        <ul class="resto-list"></ul>
+                    </div>
+                </div>
+           </div>
+       </div>
+   </div>
+    <script src="./script.js"></script>
+</body>
 </html>
